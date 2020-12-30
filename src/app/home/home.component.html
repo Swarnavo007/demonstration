@@ -1,0 +1,31 @@
+<!-- <p>home works!</p> -->
+
+
+<!-- <div class="form-group">
+    <label for="">Name</label>
+    <input type="text" name="" id="" class="form-control">
+</div> -->
+
+<div class="add-container">
+    <form [formGroup]="createForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <label class="label">Name</label>
+            <div class="control">
+                <input type="text" [class.is-invalid]="createForm.get('name').invalid && createForm.get('name').touched" formControlName="name">
+            </div>
+            <div *ngIf="createForm.get('name').invalid && createForm.get('name').touched">
+                <small *ngIf="createForm.get('name').hasError('required')" class="text-danger">Name is required</small>
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Age</label>
+            <div class="control">
+                <input type="number" [class.is-invalid]="createForm.get('age').invalid && createForm.get('age').touched" formControlName="age">
+            </div>
+            <div *ngIf="createForm.get('age').invalid && createForm.get('age').touched">
+                <small *ngIf="createForm.get('age').hasError('required')" class="text-danger">Name is required</small>
+            </div>
+        </div>
+        <button mat-raised-button color="primary" type="submit" class="submit">Submit</button>
+    </form>
+</div>
