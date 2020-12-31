@@ -16,11 +16,13 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card'
 import { ViewUserComponent } from './view-user/view-user.component';
 import { from } from 'rxjs';
+import { SortPipe } from './sort.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
-    routingModule
+    routingModule,
+    SortPipe
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeService } from '../home.service';
+import { SortPipe } from '../sort.pipe';
+
 
 @Component({
   selector: 'app-view-user',
@@ -11,6 +13,8 @@ export class ViewUserComponent implements OnInit {
   constructor(private service:HomeService) { }
 
   public details=[];
+
+  
 
   ngOnInit(): void {
 

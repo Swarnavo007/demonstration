@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   public details=[];
 
   createForm=this.fb.group({
-    name:['',Validators.required],
+    name:['',[Validators.required,Validators.pattern(/^[a-zA-Z0-9]{4,10}$/)]],
     age:['',Validators.required]
   })
 

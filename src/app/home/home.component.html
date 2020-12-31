@@ -14,7 +14,7 @@
                 <input type="text" [class.is-invalid]="createForm.get('name').invalid && createForm.get('name').touched" formControlName="name">
             </div>
             <div *ngIf="createForm.get('name').invalid && createForm.get('name').touched">
-                <small *ngIf="createForm.get('name').hasError('required')" class="text-danger">Name is required</small>
+                <small *ngIf="createForm.get('name').hasError('required') || createForm.get('name').hasError('pattern')" class="text-danger">Name is required</small>
             </div>
         </div>
         <div class="field">
@@ -23,9 +23,9 @@
                 <input type="number" [class.is-invalid]="createForm.get('age').invalid && createForm.get('age').touched" formControlName="age">
             </div>
             <div *ngIf="createForm.get('age').invalid && createForm.get('age').touched">
-                <small *ngIf="createForm.get('age').hasError('required')" class="text-danger">Name is required</small>
+                <small *ngIf="createForm.get('age').hasError('required')" class="text-danger">Age is required</small>
             </div>
         </div>
-        <button mat-raised-button color="primary" type="submit" class="submit">Submit</button>
+        <button [disabled]='!createForm.valid' mat-raised-button color="primary" type="submit" class="submit">Submit</button>
     </form>
 </div>

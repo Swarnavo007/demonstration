@@ -1,6 +1,6 @@
 <p>view-user works!</p>
 <ul>
-    <li *ngFor="let det of details">
+    <li *ngFor="let det of (details | sort)">
         <mat-card>
             <p>{{det.name}}</p>
             <p>{{det.age}}</p>
